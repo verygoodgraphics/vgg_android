@@ -1,0 +1,9 @@
+
+/VggRuntime/external
+/VggExample/VggExample/Assets
+
+local.properties
+.cxx/
+build/
+.gradle/
+.idea/
