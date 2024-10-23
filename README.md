@@ -9,6 +9,15 @@ An android runtime library for [VGG](https://vgg.cool/).
 1. [Build](https://github.com/verygoodgraphics/vgg_runtime?tab=readme-ov-file#android-building-example) VggContainer.
 2. Open the VggRuntime in Android Studio.
 
+> [!NOTE]
+> If you don't want to compile all architectures while developing, you can comment the unwanted arch in the line
+> 
+> ```kotlin
+> ndk.abiFilters.addAll(listOf("x86_64", "arm64-v8a"))
+> ```
+> 
+> in file `VggRuntime/container/build.gradle.kts`
+
 ## Usage
 
 Firstly, You should initialize the VggRuntime before any VggViews are created. For example, in your costume Application class:
