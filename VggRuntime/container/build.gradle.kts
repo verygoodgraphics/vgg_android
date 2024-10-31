@@ -60,8 +60,16 @@ android {
             isJniDebuggable = true
         }
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    publishing {
+        multipleVariants {
+            allVariants()
+            withSourcesJar()
+        }
     }
 }
 
@@ -92,6 +100,44 @@ tasks.register("copyLibs") {
                 srcDir.listFiles { _, name -> name.endsWith(".so") }?.forEach {
                     it.copyTo(File(destDir, it.name), overwrite = true)
                 }
+            }
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.verygoodgraphics.android"
+                artifactId = "container"
+                version = "1.0.0"
+
+                pom {
+                    name.set("VGG Android")
+                    description.set("VGG container for Android")
+                    url.set("https://github.com/verygoodgraphics/vgg_android")
+                    licenses {
+                        license {
+                            name.set("MIT License")
+                            url.set("https://spdx.org/licenses/MIT.html")
+                        }
+                    }
+                    developers {
+                        developer {
+                            id.set("Cryolitia")
+                            name.set("Cryolitia PukNgae")
+                            email.set("Cryolitia@gmail.com")
+                        }
+                    }
+                }
+            }
+        }
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/verygoodgraphics/vgg_android")
             }
         }
     }
