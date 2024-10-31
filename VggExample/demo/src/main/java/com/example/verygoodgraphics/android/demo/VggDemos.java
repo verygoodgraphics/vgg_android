@@ -11,14 +11,6 @@ public class VggDemos {
             name = "Counter with code in Java";
             delegateClass = com.example.verygoodgraphics.android.demo.impl.VggCounter.class;
         }});
-        DEMO_INFOS.add(new DemoInfo() {{
-            name = "Counter with code in JavaScript";
-            delegateClass = com.example.verygoodgraphics.android.demo.impl.VggJsCounter.class;
-        }});
-        DEMO_INFOS.add(new DemoInfo() {{
-            name = "Prototype interactions";
-            delegateClass = com.example.verygoodgraphics.android.demo.impl.VggJsExample.class;
-        }});
     }
 
     private VggDemos() {
