@@ -10,5 +10,5 @@
     <com.verygoodgraphics.android.container.view.VggView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:model="@raw/counter_with_js" />
+        app:model="@raw/vgg" />
 </FrameLayout>
