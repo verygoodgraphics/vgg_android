@@ -74,6 +74,10 @@ public class VggDemoViewActivity extends Activity {
 }
 ```
 
+### Using in Compose
+
+Refer to [在 Compose 中使用 View](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose?hl=zh-cn)
+
 ### API Reference
 
 - `String getVggModelUri()`: Get the Uri of the VGG model.
