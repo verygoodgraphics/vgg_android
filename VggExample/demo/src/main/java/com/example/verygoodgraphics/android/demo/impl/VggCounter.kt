@@ -41,7 +41,7 @@ class VggCounter : VggDemoDelegate {
                                     (o["content"]?.jsonPrimitive?.content ?: "0").toInt()
                                 count += 1
                                 o = JsonObject(o + ("content" to JsonPrimitive(count.toString())))
-                                vggView.elements["content"] = o.toString()
+                                vggView.elements["#count"] = o.toString()
                             }
                         }
                     }
